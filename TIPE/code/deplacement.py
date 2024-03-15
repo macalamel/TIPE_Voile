@@ -4,7 +4,7 @@ from math import sin,cos,pi,atan2
 
 class Deplacement:
     """
-    class pour donner une position en fonction du vent et de la position précédente
+    classe pour donner une position en fonction du vent et de la position précédente
     """
     def __init__(self,map,polaire,size_box:int=10,debug=False) -> None:
         self.size_box=size_box
@@ -23,7 +23,7 @@ class Deplacement:
         return res
     def get_wind(self,pos:tuple)->list:
         """
-        retourne les caractéristique du vent de la case dans laquelle le joueur est.
+        retourne les caractéristiques du vent de la case dans laquelle le bateau se trouve.
         """
         try:
             res=self.map.vector[self.set_case(pos)]
@@ -127,7 +127,7 @@ class Deplacement:
     def set_new_pos(self,speed:list,pos:tuple,angle:float)->tuple:
         """
         retourne la nouvelle position a partir de l'ancienne
-        l'angle doit être en degre
+        l'angle doit être en degrés
         """
         angle=self.deg_to_rad(angle)
         new_speed=self.set_new_speed(speed,pos,angle)

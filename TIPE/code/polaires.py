@@ -6,9 +6,9 @@ import numpy as np
 
 class Polaire:
     """
-    classe pour la creation et gestion des polaire\n
-    utiliser la fonction set_rapport pour connaître\n
-    le report de force du vent en fonction d'un angle
+    classe pour la creation et gestion des polaires
+    utiliser la fonction set_rapport pour connaître
+    la part de la force du vent transmise au bateau en fonction d'un angle
     """
     def __init__(self,name_boat:str):
         self.verify_variables_type(name_boat,str)
@@ -19,7 +19,7 @@ class Polaire:
         self.dico_fonc={self.name_angle[i]:self.data[self.name_boat][self.name_angle[i]] for i in range(len(self.name_angle))}
     def verify_variables_value(self,variable,_value:tuple):
         """"
-        check if the value is possible
+        Pour vérifier si les valeurs prises par le tuple est possible
         """
         if variable in _value:
             return True
@@ -33,7 +33,7 @@ class Polaire:
         sys.exit()
     def import_data(self):
         """
-        import la base de donnée data.json
+        importe la base de donnée data.json
         stocke les données dans le dictionnaire self.data
         """
         try:
@@ -47,8 +47,8 @@ class Polaire:
         return data
     def chose_name(self,angle:float)->str:
         """
-        renvoi le nom de l'angle\n
-        est utile pour utiliser la base de donnée
+        renvoie le nom de l'angle
+        permet d'ensuite utiliser la base de donnée
         """
         if angle<=(pi/4):
             return "pres1"
@@ -67,8 +67,8 @@ class Polaire:
         return "pres2"
     def set_rapport(self,angle:float)->float:
         """
-        prend en paramètre l'angle entre la poupe et le vent\n
-        retourne un coefficient de prise au vent\n
+        prend en paramètre l'angle entre la poupe et le vent
+        retourne un coefficient de prise au vent
         en fonction de l'angle entre le vent et le bateau
         """
         para=self.dico_fonc[self.chose_name(angle)]
@@ -76,7 +76,7 @@ class Polaire:
         return x(angle)
     def plot_angle(self):
         """
-        trace une courbe de 200000 point\n
+        trace une courbe de 200 000 point
         avec x entre 0 et 2pi et y le rapport de vent
         """
         liste_angles=np.linspace(0,2*pi,200000)
