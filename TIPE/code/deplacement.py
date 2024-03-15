@@ -1,6 +1,7 @@
 from carte_vect import map
 from polaires import polaire_bon_face,polaire_bon_dos
 from math import sin,cos,pi,atan2
+
 class Deplacement:
     """
     class pour donner une position en fonction du vent et de la position précédente

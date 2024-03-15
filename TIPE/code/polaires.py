@@ -90,6 +90,7 @@ class Polaire:
 
 polaire_bon_face=Polaire('bonface')
 polaire_bon_dos=Polaire('bondos')
+
 if __name__=="__main__":
     test1=Polaire('bondos')
     test1.plot_angle()
