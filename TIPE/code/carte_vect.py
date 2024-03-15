@@ -11,9 +11,9 @@ class MapVector:
         self.list_coord=[]
     def add_vector(self,startx:float=0,starty:float=0,lenght:float=0,angle:float=0)->None:
         """
-        ajoute des vecteur dans le dictionnaire des vecteurs et calcule leur coordonnée pour les ajouter dans la liste
+        ajoute des vecteurs dans le dictionnaire des vecteurs et calcule leurs coordonnées pour les ajouter dans la liste
 
-        paramètre:
+        paramètres:
             - startx: point de départ du vecteur en x
             - starty: point de départ du vecteur en y
             - lenght: norme du vecteur
@@ -23,7 +23,7 @@ class MapVector:
         self.list_coord.append([startx,starty,(cos(Math.deg_to_rad(angle))*lenght),(sin(Math.deg_to_rad(angle))*lenght)])
     def make_map(self):
         """
-        Crée la carte en ajoutant les vecteurs 
+        Créé la carte en ajoutant les vecteurs 
         """
         plt.plot(30,40,"rx",markersize=12)
         for i in self.list_coord:
@@ -68,7 +68,7 @@ class MapVector:
 
     def show_way(self,position):
         """
-        permet d'ajouter un chemin a la carte vectoriel
+        permet d'ajouter un chemin à la carte vectorielle
         """
         self.make_map()
         x=[i[0] for i in position]
