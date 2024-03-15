@@ -5,13 +5,13 @@ from polaires import Polaire
 
 def deg_to_rad(angle:float)->float:
     '''
-    convertie les degrets en radian
+    convertit les degrés en radians
     '''
     return angle*pi/180
 
 def eval_time(fonct,*arg)->tuple[int,None]:
     '''
-    fonction calcul temps que prend la fonction fonct pour fonctionner
+    calcule le temps mis par la fonction "fonct" à s'exécuter
     '''
     t1=time()
     if len(arg)!=0:
@@ -35,11 +35,11 @@ def all_way():
     chercher tous les chemins
 
 
-    il retourne une liste avec la syntaxe suivante
+    elle retourne une liste avec la syntaxe suivante :
 
     [gain,chemin]
 
-    -le gain indique si oui ou non le chemin menne à l'objectif
+    -le gain indique si oui ou non le chemin mène à l'objectif
 
     -le chemin indique le parcours effectué.
 
@@ -48,13 +48,13 @@ def all_way():
     result=[]
     def rec(pos:list,way:list):
         '''
-        fonction recursive
+        fonction récursive
         '''
         way1=deepcopy(way)
         for i in range(0,360,36):
             way2=deepcopy(way1)
             pos2=deplace(pos,i)
-            if pos2==[8,4]:                       # si le goal est atteind
+            if pos2==[8,4]:                       # si le goal est atteint
                 way2.append(pos2)
                 result.append([1,deepcopy(way2)])
                 pass
