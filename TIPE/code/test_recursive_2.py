@@ -8,13 +8,13 @@ import threading
 
 def deg_to_rad(angle:float)->float:
     '''
-    convertie les degrets en radian
+    convertie les degrés en radians
     '''
     return angle*pi/180
 
 def eval_time(fonct,*arg)->tuple[int,None]:
     '''
-    fonction calcul temps que prend la fonction fonct pour fonctionner
+    Calcule le temps mis par la fonction "fonct" à s'exécuter
     '''
     t1=time()
     if len(arg)!=0:
@@ -34,15 +34,15 @@ def deplace(pos:list,angle:float)->list:
 
 def all_way():
     '''
-    fonction qui utilise la recursivité pour
+    fonction qui utilise la récursivité pour
     chercher tous les chemins
 
 
-    il retourne une liste avec la syntaxe suivante
+    elle retourne une liste avec la syntaxe suivante :
 
     [gain,chemin]
 
-    -le gain indique si oui ou non le chemin menne à l'objectif
+    -le gain indique si oui ou non le chemin mène à l'objectif
 
     -le chemin indique le parcours effectué.
 
@@ -58,8 +58,8 @@ def all_way():
         return (time()-time1)*total/nb_etapes
     def rec(angle:int,speed:list,pos:list,way:list):
         '''
-        fonction recursive,
-        prend en argument la vitesse precedentente, la position precedente
+        fonction récursive,
+        prend en argument la vitesse précédente, la position précédente
         '''
         global result,nombre_etape,nombre_arriver,nombre_long,nombre_sortie
         way1=deepcopy(way)
@@ -76,11 +76,11 @@ def all_way():
                 elif len(way2)<=len(result[0]):         # si le chemin n'est pas trop long
                     way2.append(pos2)
                     rec(i,speed2,pos2,deepcopy(way2))
-                else:                                   #le chemin est trop
+                else:                                   #le chemin est trop long
                     nombre_long+=1
             nombre_etape+=1
             print(nombre_etape,"/10000000000   temps restant estimé : ",round(calculer_le_temps_restant(nombre_etape,100000000000000000000)/3600,1),end="\r")
-            #,"temps passée : ",round((time()-time1)/60,1),"nombre de bateaux arrivés : ",nombre_arriver,"nombre de bateau sortis de la map : ",nombre_sortie,"nombre de bateau au chemin trop long : ",nombre_long,end='\r')
+            #,"temps passé : ",round((time()-time1)/60,1),"nombre de bateaux arrivés : ",nombre_arriver,"nombre de bateau sortis de la map : ",nombre_sortie,"nombre de bateau au chemin trop long : ",nombre_long,end='\r')
 
         nombre_sortie+=1
     rec(53,[0,0],[0,0],[[0,0],])
