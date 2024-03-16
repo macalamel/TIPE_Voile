@@ -137,7 +137,7 @@ class Deplacement:
             print("nouvelle position =",new_pos)
         return new_pos,new_speed
 
-dep=Deplacement(map,polaire_bon_face,debug=False)
+dep=Deplacement(map,polaire_bon_dos,debug=False)
 
 if __name__=="__main__":
     test=Deplacement(map,polaire_bon_face,debug=True)

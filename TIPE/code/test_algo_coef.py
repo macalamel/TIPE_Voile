@@ -114,6 +114,7 @@ def algorithme()->list:
     while not get_goal(pos,cible,2):
         speed,pos=set_next_pos(pos,speed,cible)
         way.append(pos)
+        
     
     # affichage et presentation des résultats
     print(way)
@@ -172,6 +173,9 @@ def algorithme_2():
     while not get_goal(pos,cible,2):
         speed,pos=set_next_pos_2(pos,speed,cible,distance_init)
         way.append(pos)
+        map.show_way(way)
+        map.make_map()
+        map.show_map()
     
     # affichage et presentation des résultats
     print(way)
@@ -203,9 +207,9 @@ def droite():
 if __name__=="__main__":
     a,dure=eval_time(algorithme_2)
     print(len(a),dure,'s')
-    a,dure=eval_time(algorithme)
-    print(len(a),dure,'s')
-    a,dure=eval_time(droite)
-    print(len(a),dure,'s')
+    # a,dure=eval_time(algorithme)
+    # print(len(a),dure,'s')
+    # a,dure=eval_time(droite)
+    # print(len(a),dure,'s')
 
 ##############################
