@@ -41,7 +41,7 @@ class Polaire:
             with open(path,"r") as f :
                 data=json.load(f)
         except:
-            path="Database/data.json"
+            path="TIPE\\Database\\data.json"
             with open(path,"r") as f :
                 data=json.load(f)
         return data

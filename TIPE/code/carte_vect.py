@@ -64,6 +64,13 @@ class MapVector:
                 big_list.append([i*5,j*5,5,(i)*90/(15)+(j)*90/(-15)])
         for i in big_list:
             self.add_vector(i[0],i[1],i[2],i[3])
+    def set_map_droite(self):
+        big_list=[]
+        for i in range(10):
+            for j in range(10):
+                big_list.append([i*5,j*5,5,90])
+        for i in big_list:
+            self.add_vector(i[0],i[1],i[2],i[3])
 ##############################################################################################""
 
     def show_way(self,position):

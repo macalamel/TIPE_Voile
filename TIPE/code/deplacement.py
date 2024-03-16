@@ -112,7 +112,7 @@ class Deplacement:
         K=0.5*(Roa*(Sv*(Czva-Cxva)-Sa*Cxca)-Roe*Se*Cxce)
         #############################################################################################
 
-        new_speed=[((K/m)*(speed[0]**2))+speed[0],((K/m)*(speed[1]**2))+speed[1]] # équation discrétisée
+        new_speed=[((K/m)*(wind[0]**2))+speed[0],((K/m)*(wind[1]**2))+speed[1]] # équation discrétisée
 
         
         real_speed=self.borne_speed(new_speed,wind)
