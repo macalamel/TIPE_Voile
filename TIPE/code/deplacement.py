@@ -32,6 +32,10 @@ class Deplacement:
         if self.debug:
             print("vitesse du vents =",res)
         return res
+
+#########################################################################################
+#fonction a changer pour fixer l'angles du vent qui est pris en compte dans les polaires#
+#########################################################################################
     def set_relatif_wind(self,angle:int,vents:list):
         """
         retourne le vent relatif au bateau
