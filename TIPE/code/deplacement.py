@@ -60,7 +60,7 @@ class Deplacement:
         retourne le rapport de prise au vent en fonction de l'angle entre le vent et le bateau
         """
 
-        res=self.polaire.set_rapport(angle)
+        res=self.polaire.set_rapport((angle+pi)%(2*pi))
         if self.debug:
             print("pourcentage du vents =",res)
         return res
@@ -87,10 +87,10 @@ class Deplacement:
         #################################################################################
         new_speed=[(speed[0]*0.5)+(rapport*wind[0]),(speed[1]*0.5)+(rapport*wind[1])]  #partie a changer
         #################################################################################
-        real_speed=self.borne_speed(new_speed,wind)
+        #real_speed=self.borne_speed(new_speed,wind)
         if self.debug:
-            print("vitesse =",real_speed)
-        return real_speed
+            print("vitesse =",new_speed)
+        return new_speed
     
     def set_new_speed_2(self,speed:list,pos:tuple,angle:float)->list:
         """

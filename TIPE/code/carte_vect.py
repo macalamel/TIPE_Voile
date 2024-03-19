@@ -25,7 +25,7 @@ class MapVector:
         """
         Créé la carte en ajoutant les vecteurs 
         """
-        plt.plot(30,40,"rx",markersize=12)
+        plt.plot(25,40,"rx",markersize=12)
         for i in self.list_coord:
             plt.quiver(i[0],i[1],i[2],i[3],width=0.0025,angles='xy', scale_units = 'xy', scale = 1)
 
@@ -68,10 +68,7 @@ class MapVector:
         big_list=[]
         for i in range(10):
             for j in range(10):
-                if j<5:
-                    big_list.append([i*5,j*5,5,225])
-                else:
-                    big_list.append([i*5,j*5,5,270])
+                big_list.append([i*5,j*5,5,270])
         for i in big_list:
             self.add_vector(i[0],i[1],i[2],i[3])
 ##############################################################################################""
@@ -94,7 +91,7 @@ class MapVector:
 
 map=MapVector()
 map=MapVector()
-map.set_map_droite()
+map.set_map_4()
 map.make_map()
 
 
