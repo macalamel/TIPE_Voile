@@ -122,9 +122,9 @@ def algorithme()->list:
         
     
     # affichage et presentation des résultats
-    print(way)
-    map.show_way(way)
-    map.show_map()
+    # print(way)
+    # map.show_way(way)
+    # map.show_map()
     return way
 
 def set_next_pos_2(prec:list,speedpec:list,cible:list,distance_init:float)->tuple[list,list]:
@@ -183,9 +183,9 @@ def algorithme_2():
         # map.show_map()
     
     # affichage et presentation des résultats
-    print(way)
-    map.show_way(way)
-    map.show_map()
+    # print(way)
+    # map.show_way(way)
+    # map.show_map()
     return way
 ###################### fonction qui fait aller le bateau en ligne droite jusqu'a la cible ####################
 
@@ -201,13 +201,12 @@ def droite():
         alpha=atan2(y,x)
         pos,speed=dep.set_new_pos(speed,pos,rad_to_deg(alpha))
         way.append(pos)
-        map.show_way(way)
-        map.make_map()
-        map.show_map()
+        # map.show_way(way)
+        # map.make_map()
+        # map.show_map()
 
-    print(way)
-    map.show_way(way)
-    map.show_map()
+    # map.show_way(way)
+    # map.show_map()
     return way
 
 
@@ -229,7 +228,6 @@ def set_next_pos_3(prec:list,speedpec:list,cible:list)->tuple[list,list]:
     distance=((abs(x)**2)+(abs(y)**2))**0.5
     if distance<=5:
         pos,speed=dep.set_new_pos(speedpec,prec,rad_to_deg(alpha))
-        print("ok",alpha)
         return speed,pos
     else:
         # on prend un intervalle [alpha-40,alpha+40] et pour chaque angle dans cet intervalle
@@ -270,7 +268,6 @@ def algorithme_3()->list:
         
     
     # affichage et presentation des résultats
-    print(way)
     # map.show_way(way)
     # map.show_map()
     return way
@@ -283,7 +280,10 @@ if __name__=="__main__":
     map.show_way(a)
     map.show_map()
     print(len(a),dure,'s')
-    # a,dure=eval_time(droite)
-    # print(len(a),dure,'s')
+    a,dure=eval_time(droite)
+    print(len(a),dure,'s')
+    map.make_map()
+    map.show_way(a)
+    map.show_map()
 
 ##############################
