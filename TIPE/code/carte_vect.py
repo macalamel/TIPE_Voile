@@ -68,7 +68,10 @@ class MapVector:
         big_list=[]
         for i in range(10):
             for j in range(10):
-                big_list.append([i*5,j*5,5,270])
+                if j<3:
+                    big_list.append([i*5,j*5,5,270-(20-(j*5))])
+                else:
+                    big_list.append([i*5,j*5,5,270])
         for i in big_list:
             self.add_vector(i[0],i[1],i[2],i[3])
 ##############################################################################################""
@@ -91,7 +94,7 @@ class MapVector:
 
 map=MapVector()
 map=MapVector()
-map.set_map_4()
+map.set_map_droite()
 map.make_map()
 
 
