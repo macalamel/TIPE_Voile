@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from test_algo_coef import algorithme_3
 from carte_vect import map
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation,PillowWriter
  
 
 way=algorithme_3()
@@ -34,3 +34,6 @@ def update(frame):
 
 ani = FuncAnimation(fig, update, frames=range(len(way)*2),init_func=init, interval=500,repeat=True, blit=False)
 plt.show()
+
+# writer = PillowWriter(fps=2,metadata=dict(artist='Me'),bitrate=1800)
+# ani.save('résolution.gif', writer=writer)
