@@ -117,7 +117,7 @@ def algorithme()->list:
         way.append(pos)
         map.show_way(way)
         map.make_map()
-        map.show_map()
+        #map.show_map()
         #print(way[-1],end='\r')
         
     
